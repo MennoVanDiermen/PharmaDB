@@ -80,7 +80,7 @@ public class FXMLDocumentController implements Initializable {
     
     @FXML
     private void handleTextFieldAction(ActionEvent event) throws Exception {
-        ObservableList result;
+        ObservableList result; long t = System.currentTimeMillis();
         if(event.getSource().equals(CIDfield)) {
             String query = CIDfield.textProperty().get();
             result = db.searchCID(Integer.parseInt(query));
@@ -99,6 +99,7 @@ public class FXMLDocumentController implements Initializable {
             result = db.searchPROD(query);
         }
         results.setItems(result);
+        System.out.println("Results retrieved in: " + (System.currentTimeMillis() - t) + "milliseconds.");
     }
     
     @FXML
@@ -155,6 +156,8 @@ public class FXMLDocumentController implements Initializable {
             ScriptRecord sr = db.getScript(selectedScript.getSID());
             sr.setFilled(true);
             db.updateScriptRecord(sr);
+            
+            db.subtractFill(sr.getPid());
             
             yes.getScene().getWindow().hide();
         } else {

@@ -1,0 +1,1 @@
+start javaw -jar C:\Users\Menno.VanDIermen\Documents\NetBeansProjects\PharmaDB\dist\PharmaDB.jar

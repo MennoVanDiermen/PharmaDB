@@ -64,6 +64,16 @@ public class Database {
         insertStockRecord(sr);
     }
     
+    public void deleteStockRecord(StockRecord sr) {
+        DB db = openDB();
+        
+        Map<Integer, StockRecord> inventory = db.getTreeMap(STOCK_PATH);
+        inventory.remove(sr.getProduct_id(), sr);
+        
+        
+        db.commit(); db.close();
+    }
+    
     public StockRecord getProduct(int pid) {
         DB db = openDB();
         Map<Integer, StockRecord> stock = db.getTreeMap(STOCK_PATH);
@@ -100,7 +110,8 @@ public class Database {
         Map<Integer, StockRecord> stock = db.getTreeMap(STOCK_PATH);        
         
         for(StockRecord sr: stock.values()) {
-            if(sr.getProd().contains(nm)) list.add(new ProdResult(sr));
+            if(sr.getProd().toLowerCase().contains(nm.toLowerCase())) 
+                list.add(new ProdResult(sr));
         }
         
         db.commit(); db.close();
@@ -130,6 +141,16 @@ public class Database {
     
     public void updatePatientRecord(PatientRecord pr) {
         insertPatientRecord(pr);
+    }
+    
+    public void deletePatientRecord(PatientRecord pr) {
+        DB db = openDB();
+        
+        Map<Integer, PatientRecord> patients = db.getTreeMap(PATIENT_PATH);        
+        patients.put(pr.getPatient_id(), pr);
+        
+        
+        db.commit(); db.close();
     }
     
     public PatientRecord getPatient(int cid) {
@@ -176,11 +197,10 @@ public class Database {
         Map<Integer, PatientRecord> patients = db.getTreeMap(PATIENT_PATH);
         
         for(PatientRecord r: patients.values()) {
-            if(r.getLname().startsWith(ln)) {
+            if(r.getLname().toLowerCase().startsWith(ln.toLowerCase())) {
                 list.add(new PatientResult(r));
             }
         }
-        
         
         db.commit(); db.close();
         return list;
@@ -264,9 +284,9 @@ public class Database {
     public static String getDate() {
         Calendar c = Calendar.getInstance(Locale.US);
         String date = "";
-        date += String.format("%02d" ,c.get(Calendar.MONTH));
+        date += String.format("%02d" ,c.get(Calendar.MONTH)+1);
         date += "/";
-        date += String.format("%02d" ,c.get(Calendar.DATE)+1);
+        date += String.format("%02d" ,c.get(Calendar.DATE));
         date += "/";
         date += c.get(Calendar.YEAR);
         return date;
@@ -275,5 +295,11 @@ public class Database {
     public static DB openDB() {
         File file = new File(DB_PATH);
         return DBMaker.newFileDB(file).make();
+    }
+
+    public void subtractFill(int pid) {
+        StockRecord sr = getProduct(pid);
+        sr.setStock(sr.getStock()-1);
+        insertStockRecord(sr);
     }
 }
