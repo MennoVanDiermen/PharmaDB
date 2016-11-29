@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane prefHeight="480.0" prefWidth="800.0" style="-fx-background-color: whitesmoke;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.usd.csc.pdb.FXMLDocumentController">
+  <columnConstraints>
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="330.0" minWidth="10.0" prefWidth="222.0" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="448.0" minWidth="10.0" prefWidth="150.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="321.0" minWidth="10.0" prefWidth="321.0" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints maxHeight="50.0" minHeight="50.0" prefHeight="50.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="53.0" minHeight="0.0" prefHeight="27.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="153.0" minHeight="10.0" prefHeight="29.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="206.0" minHeight="3.0" prefHeight="26.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="224.0" minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="322.0" minHeight="10.0" prefHeight="322.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <TableView fx:id="results" onMouseClicked="#handlePatientSelect" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.rowIndex="1" GridPane.rowSpan="5">
+        <columns>
+          <TableColumn fx:id="cid" maxWidth="60.0" minWidth="60.0" prefWidth="60.0" resizable="false" text="CID" />
+          <TableColumn fx:id="fn" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" resizable="false" text="First Name" />
+            <TableColumn fx:id="ln" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" resizable="false" text="Last Name" />
+            <TableColumn fx:id="dob" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" resizable="false" text="DOB" />
+            <TableColumn fx:id="zip" maxWidth="60.0" minWidth="60.0" prefWidth="60.0" text="ZIP" />
+            <TableColumn fx:id="addr" maxWidth="200.0" minWidth="120.0" prefWidth="120.0" text="ADDRESS" />
+        </columns>
+         <GridPane.margin>
+            <Insets left="1.0" />
+         </GridPane.margin>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
+      <TextField fx:id="CIDfield" onAction="#handleTextFieldAction" promptText="Search by Customer ID" GridPane.rowIndex="1" />
+      <TextField fx:id="LNfield" onAction="#handleTextFieldAction" promptText="Search by Last Name" GridPane.rowIndex="2" />
+      <TableView fx:id="recent" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="5">
+        <columns>
+          <TableColumn fx:id="rcid" maxWidth="60.0" minWidth="60.0" prefWidth="60.0" resizable="false" text="CID" />
+          <TableColumn fx:id="pid" maxWidth="60.0" minWidth="60.0" prefWidth="60.0" resizable="false" text="PID" />
+            <TableColumn fx:id="date" maxWidth="200.0" minWidth="100.0" prefWidth="100.0" text="DATE" />
+        </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
+      <MenuButton alignment="CENTER_RIGHT" mnemonicParsing="false" text="Switch view" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.halignment="RIGHT">
+        <items>
+          <MenuItem fx:id="menuDoc" mnemonicParsing="false" onAction="#handleSwitchButtonAction" text="Healthcare Provider" />
+          <MenuItem fx:id="menuInv" mnemonicParsing="false" onAction="#handleSwitchButtonAction" text="Inventory Manager" />
+        </items>
+      </MenuButton>
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Recent prescriptions:" GridPane.rowIndex="4" />
+      <Text fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" text="PHARMA">
+         <font>
+            <Font name="Bauhaus 93" size="60.0" />
+         </font>
+      </Text>
+      <Text fill="BLUE" strokeType="OUTSIDE" strokeWidth="0.0" text="DBMS" GridPane.columnIndex="1">
+         <font>
+            <Font name="Bauhaus 93" size="60.0" />
+         </font>
+      </Text>
+   </children>
+</GridPane>

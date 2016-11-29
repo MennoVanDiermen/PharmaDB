@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="800.0" style="-fx-background-color: whitesmoke;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.usd.csc.pdb.FXMLDocumentController">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="230.0" minWidth="230.0" prefWidth="230.0" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="90.0" minWidth="90.0" prefWidth="90.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="135.0" minWidth="135.0" prefWidth="135.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="80.0" minWidth="80.0" prefWidth="80.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="145.0" minWidth="145.0" prefWidth="145.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="120.0" minWidth="120.0" prefWidth="120.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints maxHeight="50.0" minHeight="50.0" prefHeight="50.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="40.0" minHeight="40.0" prefHeight="40.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="40.0" minHeight="40.0" prefHeight="40.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="40.0" minHeight="40.0" prefHeight="40.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="40.0" minHeight="40.0" prefHeight="40.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="143.0" minHeight="40.0" prefHeight="77.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="150.0" minHeight="47.0" prefHeight="113.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <Text fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" text="PHARMA">
+         <font>
+            <Font name="Bauhaus 93" size="60.0" />
+         </font>
+      </Text>
+      <Text fill="BLUE" strokeType="OUTSIDE" strokeWidth="0.0" text="DBMS" GridPane.columnIndex="1" GridPane.columnSpan="2">
+         <font>
+            <Font name="Bauhaus 93" size="60.0" />
+         </font>
+      </Text>
+      <MenuButton alignment="CENTER_RIGHT" mnemonicParsing="false" text="Switch view" GridPane.columnIndex="5" GridPane.halignment="RIGHT">
+         <items>
+            <MenuItem fx:id="menuPha" mnemonicParsing="false" onAction="#handleSwitchButtonAction" text="Pharmacy Partner" />
+            <MenuItem fx:id="menuInv" mnemonicParsing="false" onAction="#handleSwitchButtonAction" text="Inventory Manager" />
+         </items>
+      </MenuButton>
+      <Button fx:id="addPatient" mnemonicParsing="false" onAction="#handleOpenNewPatient" text="New Patient..." GridPane.columnIndex="5" GridPane.halignment="RIGHT" GridPane.rowIndex="1" GridPane.valignment="TOP" />
+      <TextField fx:id="CIDfield" onAction="#handleTextFieldAction" promptText="Find patient by client ID" GridPane.rowIndex="1" GridPane.valignment="TOP" />
+      <TableView fx:id="results" onMouseClicked="#handleDocPatientSelect" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="3" GridPane.rowSpan="4">
+        <columns>
+          <TableColumn fx:id="cid" maxWidth="60.0" minWidth="60.0" prefWidth="60.0" text="CID" />
+          <TableColumn fx:id="ln" maxWidth="80.0" minWidth="80.0" text="Last name" />
+            <TableColumn fx:id="dob" maxWidth="90.0" minWidth="90.0" prefWidth="90.0" text="DOB" />
+        </columns>
+      </TableView>
+      <TextField fx:id="LNfield" onAction="#handleTextFieldAction" promptText="Find patient by last name" GridPane.rowIndex="2" GridPane.valignment="TOP" />
+      <TextField fx:id="pFN" editable="false" GridPane.columnIndex="2" GridPane.rowIndex="3" GridPane.valignment="TOP" />
+      <Label text="Please select a patient on the left to complete this form:" GridPane.columnIndex="1" GridPane.columnSpan="5" GridPane.rowIndex="1" GridPane.valignment="TOP" />
+      <Label text="First Name:" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="3" GridPane.valignment="TOP" />
+      <Label text="Last Name:" GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.rowIndex="3" GridPane.valignment="TOP" />
+      <Label text="Date of birth:" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="4" GridPane.valignment="TOP" />
+      <TextField fx:id="pLN" editable="false" GridPane.columnIndex="4" GridPane.rowIndex="3" GridPane.valignment="TOP" />
+      <TextField fx:id="pDOB" editable="false" GridPane.columnIndex="2" GridPane.rowIndex="4" GridPane.valignment="TOP" />
+      <TextField fx:id="pZIP" editable="false" GridPane.columnIndex="4" GridPane.rowIndex="4" GridPane.valignment="TOP" />
+      <Label text="ZIP:" GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.rowIndex="4" GridPane.valignment="TOP" />
+      <Label text="Address:" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="5" GridPane.valignment="TOP" />
+      <TextField fx:id="pAddr" editable="false" GridPane.columnIndex="2" GridPane.columnSpan="3" GridPane.rowIndex="5" GridPane.valignment="TOP" />
+      <Label text="ID:" GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.rowIndex="2" GridPane.valignment="TOP" />
+      <TextField fx:id="pID" editable="false" GridPane.columnIndex="4" GridPane.rowIndex="2" GridPane.valignment="TOP" />
+      <Button fx:id="prescribe" mnemonicParsing="false" onAction="#handleOpenPrescribe" text="Prescribe ..." GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="TOP" />
+   </children>
+</GridPane>

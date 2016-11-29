@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.usd.csc.pdb.FXMLDocumentController">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="240.0" minWidth="240.0" prefWidth="240.0" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="418.0" minWidth="10.0" prefWidth="104.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="418.0" minWidth="10.0" prefWidth="256.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints maxHeight="35.0" minHeight="35.0" prefHeight="35.0" />
+    <RowConstraints maxHeight="35.0" minHeight="35.0" prefHeight="35.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="35.0" minHeight="35.0" prefHeight="35.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="35.0" minHeight="35.0" prefHeight="35.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="35.0" minHeight="35.0" prefHeight="35.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="219.0" minHeight="10.0" prefHeight="77.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <TableView fx:id="results" onMouseClicked="#handleSelectMed" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1" GridPane.rowSpan="5">
+        <columns>
+          <TableColumn fx:id="pid" maxWidth="60.0" minWidth="60.0" prefWidth="60.0" resizable="false" text="PID" />
+          <TableColumn fx:id="prod" maxWidth="120.0" minWidth="120.0" prefWidth="120.0" resizable="false" text="Product" />
+            <TableColumn fx:id="dose" maxWidth="60.0" minWidth="60.0" prefWidth="60.0" text="Dose" />
+        </columns>
+      </TableView>
+      <TextField fx:id="PRODfield" onAction="#handleTextFieldAction" promptText="Search for a product" />
+      <Button fx:id="confirmPrescribe" mnemonicParsing="false" onAction="#handleConfirmPrescribe" text="Issue Prescription" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER" />
+      <TextField fx:id="pPid" onAction="#handlePrescribePid" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+      <TextField fx:id="pProd" editable="false" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+      <TextField fx:id="pDose" editable="false" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+      <Label text="Product ID:" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="2" />
+      <Label text="Product Name:" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="3" />
+      <Label text="Dosage:" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="4" />
+      <Label text="Select a product or enter its PID" GridPane.columnIndex="2" />
+   </children>
+</GridPane>

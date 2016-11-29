@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" maxHeight="128.0" maxWidth="256.0" minHeight="128.0" minWidth="256.0" prefHeight="128.0" prefWidth="256.0" style="-fx-background-color: whitesmoke;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.usd.csc.pdb.FXMLDocumentController">
+   <children>
+      <Button fx:id="yes" layoutX="58.0" layoutY="94.0" mnemonicParsing="false" onAction="#handleFillButton" text="YES" />
+      <Button fx:id="no" layoutX="155.0" layoutY="94.0" mnemonicParsing="false" onAction="#handleFillButton" text="NO" />
+      <Label layoutX="79.0" layoutY="14.0" text="CONFIRM FILL" />
+      <Text layoutX="24.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mark this prescription as filled?" />
+      <Text layoutX="50.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="This cannot be undone." />
+   </children>
+</AnchorPane>

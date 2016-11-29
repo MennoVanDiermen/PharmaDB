@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.usd.csc.pdb.FXMLDocumentController">
+   <children>
+      <Button fx:id="idClose" layoutX="80.0" layoutY="65.0" mnemonicParsing="false" onAction="#handleIDClose" text="OK" />
+      <Text layoutX="14.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Client ID#:" />
+      <Text layoutX="7.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Please provide to new client." />
+      <Label fx:id="idText" layoutX="101.0" layoutY="14.0" text="id" />
+   </children>
+</AnchorPane>

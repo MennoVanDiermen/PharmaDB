@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="250.0" prefWidth="400.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="edu.usd.csc.pdb.FXMLDocumentController">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="100.0" prefWidth="100.0" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="100.0" prefWidth="100.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="100.0" prefWidth="100.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="100.0" prefWidth="100.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints maxHeight="50.0" minHeight="50.0" prefHeight="50.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="50.0" minHeight="50.0" prefHeight="50.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="50.0" minHeight="50.0" prefHeight="50.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="50.0" minHeight="50.0" prefHeight="50.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="50.0" minHeight="50.0" prefHeight="50.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <Label text="ADD PATIENT:" GridPane.columnSpan="4" GridPane.halignment="LEFT" GridPane.valignment="TOP">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <TextField fx:id="addFN" promptText="First Name" GridPane.columnSpan="2" GridPane.rowIndex="1" />
+      <TextField fx:id="addLN" promptText="Last Name" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.rowIndex="1" />
+      <TextField fx:id="addMonth" promptText="mm" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+      <TextField fx:id="addDay" promptText="dd" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+      <TextField fx:id="addYear" promptText="yyyy" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="DATE OF BIRTH:" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <TextField fx:id="addZip" promptText="ZIP" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+      <TextField fx:id="addAddr" promptText="Address (Street &amp; Number)" GridPane.columnSpan="3" GridPane.rowIndex="3" />
+      <Button fx:id="addConfirm" mnemonicParsing="false" onAction="#handleAddButton" text="Add to Database" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.halignment="RIGHT" GridPane.rowIndex="4" />
+      <Button fx:id="addCancel" mnemonicParsing="false" onAction="#handleAddButton" text="Cancel" GridPane.halignment="LEFT" GridPane.rowIndex="4" />
+   </children>
+</GridPane>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.layout.*?>
+<?import edu.usd.csc.pdb.*?>
+
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: whitesmoke;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.usd.csc.pdb.FXMLDocumentController">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+  </columnConstraints>
+  <rowConstraints>
+      <RowConstraints maxHeight="116.0" minHeight="10.0" prefHeight="27.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="174.0" minHeight="10.0" prefHeight="133.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="166.0" minHeight="10.0" prefHeight="123.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="101.0" minHeight="10.0" prefHeight="90.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <TextArea fx:id="dialogTA" editable="false" prefHeight="128.0" prefWidth="300.0" GridPane.rowIndex="1" />
+      <TableView fx:id="scripts" onMouseClicked="#handleScriptSelect" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2" GridPane.rowSpan="2">
+        <columns>
+          <TableColumn fx:id="spid" editable="false" prefWidth="75.0" text="PID" />
+          <TableColumn fx:id="med" editable="false" prefWidth="219.0" text="Name" />
+            <TableColumn fx:id="sdose" editable="false" minWidth="1.0" prefWidth="124.0" text="Dosage" />
+            <TableColumn fx:id="date" editable="false" minWidth="4.0" prefWidth="127.0" text="Date" />
+            <TableColumn fx:id="filled" editable="false" prefWidth="54.0" text="Filled" />
+        </columns>
+      </TableView>
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Presciptions for patient:" GridPane.halignment="LEFT" GridPane.valignment="TOP" />
+   </children>
+</GridPane>
